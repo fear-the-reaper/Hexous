@@ -19,14 +19,16 @@ def validation(randNum, usrNum):
 
 
 def usrInputAndOutput(randNum, stop):
+	tries = 0
 	while(not stop) :
 		print("number generated is " + randNum)
 		usrNum = input("Enter a 4 digit number: ")
 		numOfCow, numOfBull = validation(randNum, usrNum)
+		tries += 1
 		print(numOfCow + " cows " + numOfBull + " bulls")
 		if(int(numOfCow) == 4):
 			stop = True
-			print("Congrats you won!!!!!!")
+			print("Congrats you won!!!!!! in", tries, "tries")
 # main program:
 stop = False
 randNum = numberGen()
